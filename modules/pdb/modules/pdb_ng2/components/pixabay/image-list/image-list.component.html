@@ -1,0 +1,16 @@
+<div class="img-gen-container">
+  <input class="search" [(ngModel)]="searchQuery" placeholder="Search for Images">
+  <button (click)="searchImages(searchQuery)">Find Images</button>
+
+  <p *ngIf="searching">Fetching data...</p>
+
+  <div *ngFor="let image of images" class="item-container">
+    <div class="image">
+      <img src="{{image.previewURL}}">
+    </div>
+    <div class="image-text">
+      <p><strong>Tags: </strong>{{ image.tags }}</p>
+      <p><strong>Likes: </strong>{{ image.likes }}</p>
+    </div>
+  </div>
+</div>

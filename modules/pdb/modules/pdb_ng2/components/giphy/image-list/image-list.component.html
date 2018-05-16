@@ -1,0 +1,16 @@
+<div class="img-gen-container">
+  <input class="search" [(ngModel)]="searchQuery" placeholder="Search for Gifs">
+  <button (click)="searchImages(searchQuery)">Find Gifs</button>
+
+  <p *ngIf="searching">Fetching data...</p>
+
+  <div *ngFor="let image of images" class="item-container">
+    <img href="{{ image.images.fixed_height.url }}" alt="">
+    <div class="image-text">
+      <p><strong>ID: </strong>{{ image.id }}</p>
+      <p><strong>URL: </strong>{{ image.embed_url }}</p>
+
+    </div>
+  </div>
+</div>
+

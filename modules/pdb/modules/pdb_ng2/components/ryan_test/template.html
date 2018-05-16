@@ -1,0 +1,8 @@
+<div class="some-random-class">
+Pixabay API Images
+</div>
+
+<div *ngFor="let image of data">
+    <img src="{{image.previewURL}}">
+    <span>{{image.tags}}</span>
+</div>
